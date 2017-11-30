@@ -47,7 +47,7 @@ configure_make() {
               --prefix=${LIB_DEST_DIR}/${ABI} \
               --with-zlib-include=$SYSROOT/usr/include \
               --with-zlib-lib=$SYSROOT/usr/lib \
-              zlib \
+              no-zlib \
               no-asm \
               no-shared \
               no-unit-test
