@@ -2,7 +2,7 @@
 
 set -e
 
-R=$(cd "$0"; pwd)
+R=$(cd `dirname $0`; pwd)
 
 export ANDROID_API=21
 
