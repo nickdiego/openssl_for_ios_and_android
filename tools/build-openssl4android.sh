@@ -15,6 +15,7 @@
 # limitations under the License.
 
 set -u
+set -e
 
 source ./_shared.sh
 

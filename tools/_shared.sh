@@ -24,9 +24,11 @@ else
 fi
 ARCHS=("android" "android-armeabi" "android-x86" "android-mips")
 ABIS=("armeabi" "armeabi-v7a" "x86" "mips")
-# ANDROID_API=${ANDROID_API:-21}
-# ARCHS=("android" "android-armeabi" "android64-aarch64" "android-x86" "android64" "android-mips" "android-mips64")
-# ABIS=("armeabi" "armeabi-v7a" "arm64-v8a" "x86" "x86_64" "mips" "mips64")
+
+ANDROID_API=${ANDROID_API:-21}
+ARCHS=("android" "android-armeabi" "android64-aarch64" "android-x86" "android64" "android-mips" "android-mips64")
+ABIS=("armeabi" "armeabi-v7a" "arm64-v8a" "x86" "x86_64" "mips" "mips64")
+
 NDK=${ANDROID_NDK}
 
 configure() {
@@ -72,7 +74,7 @@ configure() {
     NDK_FLAGS="--arch=mips64"
   fi;
 
-  [ -d ${TOOLCHAIN_ROOT} ] || python $NDK/build/tools/make_standalone_toolchain.py \
+  [ -d ${TOOLCHAIN_ROOT} ] || python2 $NDK/build/tools/make_standalone_toolchain.py \
                                      --api ${ANDROID_API} \
                                      --stl libc++ \
                                      --install-dir=${TOOLCHAIN_ROOT} \
